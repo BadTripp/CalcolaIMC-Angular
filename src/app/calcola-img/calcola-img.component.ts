@@ -10,7 +10,7 @@ export class CalcolaImgComponent implements OnInit {
 
   Altezza = 0;
   Peso = 0;
-  Imc = 0;
+  Imc?:number;
   txt = '';
   corpoImg = '';
   altezzaU = '';
