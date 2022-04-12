@@ -1,0 +1,17 @@
+<div>
+    <b>Altezza({{altezzaU}})</b>
+<select [(ngModel)]="altezzaU">
+    <option value="cm">cm</option>
+    <option value="m">m</option>
+</select>
+<input type="text"  [(ngModel)]="Altezza"><br>
+
+<b>Peso({{pesoU}})</b><select [(ngModel)]="pesoU">
+    <option value="kg">kg</option>
+    <option value="lb">lb</option>
+</select><input type="text" [(ngModel)]="Peso" ><br>
+<button (click)="calcolaImc()">Calcola IMC</button><br>
+<img [src]="corpoImg" height="200" width="200">
+<b>{{Imc}}</b>
+<b>{{txt}}</b>
+</div>

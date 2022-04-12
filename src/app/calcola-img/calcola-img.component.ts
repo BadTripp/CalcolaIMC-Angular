@@ -1,0 +1,58 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-calcola-img',
+  templateUrl: './calcola-img.component.html',
+  styleUrls: ['./calcola-img.component.css'],
+})
+export class CalcolaImgComponent implements OnInit {
+  constructor() {}
+
+  Altezza = 0;
+  Peso = 0;
+  Imc = 0;
+  txt = '';
+  corpoImg = '';
+  altezzaU = '';
+  pesoU = '';
+  pesoKg = 0;
+  sottopesograveImg =
+    'https://www.lauraferrero.it/wp-content/uploads/2016/11/1280159-881x587.jpg';
+  sottopesoImg =
+    'data:image/jpeg;base64,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';
+  sovrappesoImg =
+    'https://s3.eu-central-1.amazonaws.com/pazienti-platform/contents/pictures/000/005/506/original/sovrappeso.jpg?1519662302';
+  sovrappesograveImg =
+    'https://ilfattoalimentare.it/wp-content/uploads/2013/10/obesita-grasso-sovrappeso-dieta-177115587.jpg';
+  ngOnInit(): void {}
+
+  //   Sovrappeso grave: 35
+  // Sovrappeso: 25
+  // Sottopeso grave: 15
+  // Sottopeso: 16
+  calcolaImc(): void {
+    this.pesoU == 'lb' ? (this.pesoKg=this.Peso/2.2) : this.pesoKg=this.Peso;
+    console.log(this.pesoKg)
+    this.altezzaU == 'cm'
+      ? (this.Imc = this.pesoKg / (((this.Altezza / 100) * this.Altezza) / 100))
+      : (this.Imc = this.pesoKg / (this.Altezza * this.Altezza));
+
+    if (this.Imc > 35) {
+      this.corpoImg = this.sovrappesograveImg;
+      this.txt = 'Sovrappeso grave';
+    }
+    if (this.Imc > 25 && this.Imc < 35) {
+      this.corpoImg = this.sovrappesoImg;
+      this.txt = 'Sovrappeso ';
+    }
+    if (this.Imc > 15 && this.Imc < 25) {
+      this.corpoImg = this.sottopesograveImg;
+      this.txt = 'Sottopeso grave';
+    }
+    if (this.Imc < 16) {
+      this.corpoImg = this.sottopesoImg;
+      this.txt = 'Sottopeso';
+    }
+    this.Imc=parseInt(this.Imc.toFixed(2))
+  }
+}
